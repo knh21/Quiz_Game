@@ -9,28 +9,18 @@ if playing.lower() != "yes":
 print("Okay! Game will start")
 score = 0
 
-answer = input("What does CPU stand for? ")
-if answer.lower() == "central processing unit":
-    print("Correct!")
-    score += 1
-else:
-    print("Incorrect!")
+questions = ["What does CPU stand for? ", "What does GPU stand for? ", "What does RAM stand for? "]
+answers = ["central processing unit", "graphics processing unit", "random access memory"]
 
+for e, question in enumerate(questions):
+    answer = input(question).lower()
 
-answer = input("What does GPU stand for? ")
-if answer.lower() == "graphics processing unit":
-    print("Correct!")
-    score += 1
-else:
-    print("Incorrect!")
+    if question[e] and answer == answers[e]:
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect!")
 
-
-answer = input("What does RAM stand for? ")
-if answer.lower() == "random access memory":
-    print("Correct!")
-    score += 1
-else:
-    print("Incorrect!")
 
 
 print(f"You got {score} questions correct!")
